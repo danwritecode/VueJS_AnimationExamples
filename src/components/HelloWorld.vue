@@ -1,43 +1,51 @@
 <template>
   <v-container>
-
+    <div style="margin-top: 1000px;"></div>
+    
     <v-row justify="center" align="center" style="height: 200px;">
       <v-col cols="1">
         <v-btn @click="showfadeCard = !showfadeCard">Toggle</v-btn>
       </v-col>
+      <intersect @enter="showfadeCard = true" @leave="showfadeCard = false">
       <v-col>
         <transition name="fade" mode="out-in">
           <Card v-if="showfadeCard"></Card>
         </transition>
       </v-col>
+      </intersect>
     </v-row>
 
     <v-row justify="center" align="center" style="height: 200px;">
       <v-col cols="1">
         <v-btn @click="showSlideFadeCard = !showSlideFadeCard">Toggle</v-btn>
       </v-col>
+      <intersect @enter="showSlideFadeCard = true" @leave="showSlideFadeCard = false">
       <v-col>
         <transition name="slide-fade">
           <Card v-if="showSlideFadeCard"></Card>
         </transition>
       </v-col>
+      </intersect>
     </v-row>
 
     <v-row justify="center" align="center" style="height: 200px;">
       <v-col cols="1">
         <v-btn @click="showBounceCard = !showBounceCard">Toggle</v-btn>
       </v-col>
+      <intersect @enter="showBounceCard = true" @leave="showBounceCard = false">
       <v-col>
         <transition name="bounce">
           <Card v-if="showBounceCard"></Card>
         </transition>
       </v-col>
+      </intersect>
     </v-row>
 
     <v-row justify="center" align="center" style="height: 200px;">
       <v-col cols="1">
         <v-btn @click="showAnimateCSSCard_BounceInOut = !showAnimateCSSCard_BounceInOut">Toggle</v-btn>
       </v-col>
+      <intersect @enter="showAnimateCSSCard_BounceInOut = true" @leave="showAnimateCSSCard_BounceInOut = false">
       <v-col>
         <transition name="custom-classes-transition"
             enter-active-class="animated bounceInRight"
@@ -45,12 +53,14 @@
           <Card v-if="showAnimateCSSCard_BounceInOut"></Card>
         </transition>
       </v-col>
+      </intersect>
     </v-row>
 
     <v-row justify="center" align="center" style="height: 200px;">
       <v-col cols="1">
         <v-btn @click="showAnimateCSSCard_RubberBand = !showAnimateCSSCard_RubberBand">Toggle</v-btn>
       </v-col>
+      <intersect @enter="showAnimateCSSCard_RubberBand = true" @leave="showAnimateCSSCard_RubberBand = false">
       <v-col>
         <transition name="custom-classes-transition"
             enter-active-class="animated rubberBand"
@@ -58,12 +68,14 @@
           <Card v-if="showAnimateCSSCard_RubberBand"></Card>
         </transition>
       </v-col>
+      </intersect>
     </v-row>
 
     <v-row justify="center" align="center" style="height: 200px;">
       <v-col cols="1">
         <v-btn @click="showAnimateCSSCard_FadeBigInOut = !showAnimateCSSCard_FadeBigInOut">Toggle</v-btn>
       </v-col>
+       <intersect @enter="showAnimateCSSCard_FadeBigInOut = true" @leave="showAnimateCSSCard_FadeBigInOut = false">
       <v-col>
         <transition name="custom-classes-transition"
             enter-active-class="animated fadeInLeftBig"
@@ -71,12 +83,14 @@
           <Card v-if="showAnimateCSSCard_FadeBigInOut"></Card>
         </transition>
       </v-col>
+       </intersect>
     </v-row>
 
     <v-row justify="center" align="center" style="height: 200px;">
       <v-col cols="1">
         <v-btn @click="showAnimateCSSCard_FlipInOut = !showAnimateCSSCard_FlipInOut">Toggle</v-btn>
       </v-col>
+      <intersect @enter="showAnimateCSSCard_FlipInOut = true" @leave="showAnimateCSSCard_FlipInOut = false">
       <v-col>
         <transition name="custom-classes-transition"
             enter-active-class="animated flipInX"
@@ -84,6 +98,7 @@
           <Card v-if="showAnimateCSSCard_FlipInOut"></Card>
         </transition>
       </v-col>
+      </intersect>
     </v-row>
 
     <v-row justify="center" align="center" style="height: 200px;">
@@ -96,6 +111,21 @@
             enter-active-class="animated rollIn"
             leave-active-class="animated rollOut">
             <Card v-if="showAnimateCSSCard_RollInOut"></Card>
+        </transition>
+      </v-col>
+      </intersect>
+    </v-row>
+
+    <v-row justify="center" align="center" style="height: 200px;">
+      <v-col cols="1">
+        <v-btn @click="showAnimateCSSCard_FadeDownInOut = !showAnimateCSSCard_FadeDownInOut">Toggle</v-btn>
+      </v-col>
+      <intersect @enter="showAnimateCSSCard_FadeDownInOut = true" @leave="showAnimateCSSCard_FadeDownInOut = false">
+      <v-col>
+        <transition name="custom-classes-transition"
+            enter-active-class="animated fadeInDown"
+            leave-active-class="animated fadeOutDown">
+            <Card v-if="showAnimateCSSCard_FadeDownInOut"></Card>
         </transition>
       </v-col>
       </intersect>
@@ -123,6 +153,7 @@ export default {
       showAnimateCSSCard_FadeBigInOut: true,
       showAnimateCSSCard_FlipInOut: true,
       showAnimateCSSCard_RollInOut: false,
+      showAnimateCSSCard_FadeDownInOut: false,
     }
   },
   methods: {
